@@ -1,1 +1,402 @@
+# To print The Statement Using Print Function Simply
+'''
+print("This is Shubham.py File")
+print("Congrates u got ur  program Output")
+'''
+# Swapping Two names or words
+'''
+a=input("Enter A Name:")
+b=input("Enter Another Name:")
+print(b,a)
+'''
+'''
+x=10
+y=1.2
+z=True
+name="Shubham"
+c=2+3j
+print("x is value",x,y)
+print(c)
+print(x,y,z,name,c)
+int()
+'''
+'''
+for n in range(1,10):
+    print(n)
+'''
+'''
+r=range(1,6)
+print(r[0],r[1],r[2],r[3],r[4]) 
+'''
+#To find the number is even or odd
+'''
+x=eval(input("Enter The Number"))
+if(x%2==0):
+    print("x is even")
+else:
+    print("x is odd")
+'''    
+#to print the number of rows in * format
+'''
+n=eval(input("Enter The Numbers Of Rows:"))
+for i in range(1,n+1):
+    print("*  "*n)
+'''
+# to print the number according to their values for eg:- 1 2 2 3 3 3 4 4 4 4 in Row format
+'''
+n=int(input("Enter The Number Of Rows:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(i,end=" ")
+        print()
+'''
+# to print the number how many times u give the row number
+'''
+n=int(input("Enter The Number Of Rows:"))
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        print(i,end=" ")
+        print()
+'''
+# to print the number i a increasing order one by one for eg:- 1 1 2 1 2 3 1 2 3 4
+'''
+n=int(input("Enter The Number Of Rows:"))
+for j in range(1,n+1):
+    for i in range(1,j+1):
+        print(i,end=" ")
+        print()
+'''
+# to check the number whether the number is greater than 100 or not
+'''
+x=eval(input("enter a number"))
+if x > 100:
+    print("Given number is greater than 100")
+else:
+    print("given no is less than 100")
+'''    
+#To print the message for Good Morning for the User or Guest but the Name should be Case Sensitive
+'''
+name=input("enter The Name:")
+if name=="Shubham":
+    print("Hello Shubham good morning")
+else:
+    print("hello guest good morning,""How R U!!")
+'''
+#to check whether the number is +ve or -ve
+'''
+x=eval(input("Enter a Number")) 
+if x>0:
+    print("number is postive")
+else:
+    print("number is negative")
+'''
+#to print the biggest number among three
+'''
+x=input("enter x value")
+y=input("enter y value")
+z=input("enter z value")
+if x>y and x>z:
+    print("x is Big")
+elif y>z:
+    print("y is Big")
+else:
+    print("z is Big")
+'''
+#to print the maxmium number
+'''
+a=input("enter a number:")
+b=input("enter b number:")
+c=input("enter c number:")
+max=a if a>b and a>c else b if b>c else c
+print("maximum number is:",max)
+'''
+#infinite loop
+# to print the word infinite times
+'''
+i=0
+while True:
+    i=i+1
+    print("Shubham",i)
+'''
+#Nested Loop
+'''
+for i in range(5):
+    for j in range(5):
+        print("i=",i,  "j=",j)
+'''
+#Concept of LIST
+# WAP to creat empty list and
+#adding the element in the list
+'''
+L=[]
+L.append(10)
+L.append(20)
+L.append(30)
+L.append('A')
+'''
+'''
+l=['Shubham','Hajela']
+l.append('Data Scientist')
+a=['Shubham']
+b=['Haela']
+c=['Data Scentist']
+'''
+'''
+l=[1,2,3]
+l1=[2,3,4]
+L=[1,2]
+L1=[1,2,3,4,5]
+'''
+#Number Guess Solution
+'''
+import random
+number=random.randrange(0,100)
+guessCheck="wrong"
+print("Welcome to Number Guess")
+
+while guessCheck=="wrong":
+	response=int(input("Please input a number between 0 and 100:"))
+	try:
+		val=int(response)
+	except ValueError:
+		print("This is not a valid integer. Please try again")
+		continue
+	val=int (response)
+	if val<number:
+		print("This is lower than actual number. Please try again.")
+	elif val>number:
+		print("This is higher than actual number. Please try again.")
+	else:
+		print("This is the correct number")
+		guessCheck="correct"
+
+print("Thank you for playing Number Guess. See you again")
+'''
+#to print the pattern 1,2,3,4,5,4,3,2,1
+'''
+for i in range(1,6):
+     print(i,end=',')
+for i in range(4,0,-1):
+     print(i, end=',')
+'''
+#toprint output 1,2,3,4...1,2,3,4...
+'''
+for i in range(1,6):
+     print(i,end=',')
+for j in range(1,6):
+     print(j, end=',')
+'''
+#to get the output 6,5,4,3,2,1,2,3,4,5,6,but if want to take 1 two times then take range in i(6,0,-1) as taken in next code.
+'''
+for i in range(6,1,-1):
+     print(i,end=',')
+for j in range(1,7):
+     print(j, end=',')
+'''
+'''
+for i in range(6,0,-1):
+     print(i,end=',')
+for j in range(1,7):
+     print(j, end=',')
+'''
+#to print pattern 1,2,3,4,5,6,6,5,4,3,2,1
+'''
+for i in range(1,7):
+     print(i,end=',')
+for j in range(6,0,-1):
+     print(j, end=',')
+'''
+# To Get A Pyramid Structure
+'''
+n=int(input("enter the number of rows:"))
+for i in range(1,n+1):
+     print(" "*(n-i),end="")
+     for j in range(1,i+1):
+      print("*", end=" ")
+     print()
+'''
+#swaping the two numbers of a list.
+'''
+def swapList(newlist):
+    newList[2], newList[-2] = newList[-2], newList[2]
+    return newList
+newList = [2,3,4,5,6,7,8,9]
+print(swapList(newList))
+'''
+'''
+def swapList(newlist):
+    newList[0], newList[-1] = newList[-1], newList[0]
+    newList[1], newList[-2] = newList[-2], newList[1]
+    newList[2], newList[-3] = newList[-3], newList[2]
+    newList[3], newList[-4] = newList[-4], newList[3]
+    newList[4], newList[-5] = newList[-5], newList[4]
+    newList[5], newList[-6] = newList[-6], newList[5]
+    return newList
+newList = [2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+print(swapList(newList))
+'''
+# index pattern
+# Accessing characters by using index
+N = 'Shubham'
+N[0]       # we will get 'S' as the python is 0 based index
+N[-1]      # we will get 'm' as the python is -1 based index from backword direction
+N[1]       # we will get 'h' as the python is 0 based index
+N[-2]      # we will get 'a' as the python is -1 based index from backword direction
+# Slice Operator
+# Accessing characters by using slice operator
+s='shubham belongs to MP'
+s[1:8]    #   hubham
+s[3:6]    #   bha
+s[1:8:2]  #   hba
+s[:6]     #   shubha
+s[:15]    #   shubham belongs
+s[2]      #   u
+s[:]      #   shubham belongs to MP
+s[-1]     #   p
+s[-4]     #   o
+s[::-1]   #   PM ot sgnoleb mahbuhs ->in opposite direction
+#To make A sketch using Print in python
+'''
+print("        o        ")
+print("       ooo       ")
+print("      ooooo      ")
+print("     ooooooo     ")
+print(" |             | ")
+print(" |   0     0   | ")
+print(" |             | ")
+print(" |      o      | ")
+print(" |             | ")
+print(" |    (   )    | ")
+print(" |             | ")
+print(" | ____________| ")
+print(" |             | ")
+print(" |             | ")
+print(" |_ _ _ _ _ _ _| ")
+print(" /             \ ")
+print("/               \ ")
+'''
+#Class Concept
+
+#Swapping Words or Name
+'''
+class py_solution:
+    def reverse_words(self, s):
+        return ' '.join(reversed(s.split()))
+print(py_solution().reverse_words('Shubham Python'))
+'''
+
+'''
+#CLASS Concept
+syntax -->
+class classname:
+    variable
+    methods
+'''
+'''
+class student:
+    college_id=101
+    def detals(self,stud_id,stud_name):
+        self.stud_id=stud_id
+        self.stud_name=stud_name
+    def display(self):
+       print("student Details")
+       print("self.stud_id")
+       print("self.stud_name")
+       print("self.college_id")
+       s1=student()
+       print("From First object")
+       s1.details(101,"Shubham")
+       s1.display()
+       print("From Second object")
+       s2=student()
+       s2.details(102,"Vivek")
+       s2.display()
+       print("from s1",s1.__dict__)
+       print("from s2",s2.__dict__)
+'''
+# WAP to print Right Angled Triangle
+'''
+n=int(input("enter number of rows:"))
+for i in range(1,n+1):
+    print(""*(n+1),end="")
+    print("*"*i)
+'''
+# 10 is the total number to print
+'''
+for num in range(8):
+    for i in range(num):
+        print (num, end=" ") #print number
+    # new line after each row to display pattern correctly
+    print("\n")
+'''
+
+#print("Second Number Pattern ")
+'''
+for i in range(1, 6):
+    for j in range(1, i+ 1):
+        print(j, end=' ')
+        print("*", end=" ")
+        print("$", end=" ")
+    print("")
+'''
+#By Using 4d Technique The Number Pattern Spreaded
+
+#print("Fourth Number Pattern")
+'''
+lastNumber = 9
+for i in range(1, lastNumber):
+    for j in range(-1+i, -1, -1):
+        print(format(2**j, "4d"), end=' ')
+    print("")
+'''
+#print("Sixth Number Pattern")
+'''
+currentNumber = 1
+stop = 2
+rows = 5 # Rows you want in your pattern
+for i in range(rows):
+    for column in range(1, stop):
+        print(currentNumber, end=' ')
+        currentNumber += 1
+    print("")
+    stop += 2
+'''
+#print("Program to print start pattern: \n")
+'''
+rows = input("Enter max star to be display on single line")
+rows = int (rows)
+for i in range (0, rows):
+    for j in range(0, i + 1):
+        print("*", end=' ')
+    print("\r")
+for i in range (rows, 0, -1):
+    for j in range(0, i -1):
+        print("*", end=' ')
+    print("\r")
+'''
+#Real Time Example Using Regular Expression
+'''
+import re
+num = input("Enter The Mobile Number")
+#s=re.fullmatch("[6-9]\d{9}",num) 10 digit Number
+#s=re.fullmatch("[0][6-9]\d{9}",num) 11 digit Number starts from 0
+#s=re.fullmatch("[9][1][6-9]\d{9}",num) 12 digit Number starts from 91
+#s=re.fullmatch("[+][9][1][6-9]\d{9}",num) 13 digit Number starts from +91
+if s!=None:
+    print("Number Is Valid Mobile Number")
+else:
+    print("Number Is InValid")
+'''
+# To Get A Data From Web Page for ex Google
+'''
+import urllib.request
+url=urllib.request.urlopen("https://www.google.co.in")
+data= url.read()
+print(data)
+'''
+                           
+
+
+
+                           
 
