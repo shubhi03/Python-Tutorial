@@ -374,7 +374,30 @@ for i in range (rows, 0, -1):
         print("*", end=' ')
     print("\r")
 '''
-#Real Time Example Using Regular Expression
+# To Get A Data From Web Page for ex Google
+'''
+import urllib.request
+url=urllib.request.urlopen("https://www.google.co.in")
+data= url.read()
+print(data)
+'''
+# Removing duplicates items from a list
+'''
+listNumbers = [20, 22, 24, 26, 28, 28, 20, 30, 24]
+print("Original= ", listNumbers)
+listNumbers = list(set(listNumbers))
+print("After removing duplicate= ", listNumbers)
+'''
+A Real Time Projects
+#Real Time Example Using Regular Expression To Find The Valid Telangana State Vehical Number....
+import re
+svn=input("Enter The Vehicle Num")
+s=re.fullmatch("[T][S]\d{2}[A-Z]{2}\d{4}",svn)
+if s!= None:
+    print("Valid TS Vehical Number")
+else:
+    print("Not a Valid Number")
+#Real Time Example to find mobile number is valid or not Using Regular Expression
 '''
 import re
 num = input("Enter The Mobile Number")
@@ -387,20 +410,6 @@ if s!=None:
 else:
     print("Number Is InValid")
 '''
-# To Get A Data From Web Page for ex Google
-'''
-import urllib.request
-url=urllib.request.urlopen("https://www.google.co.in")
-data= url.read()
-print(data)
-'''
-# Removing duplicates items from a list
-listNumbers = [20, 22, 24, 26, 28, 28, 20, 30, 24]
-print("Original= ", listNumbers)
-listNumbers = list(set(listNumbers))
-print("After removing duplicate= ", listNumbers)
-
-
 
                            
 
