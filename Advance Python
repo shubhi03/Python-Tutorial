@@ -1,1 +1,16 @@
+# Create a Class Called STUDENT and Create a Object to it.
+
+class Student:
+
+    def(self,name,rollno,marks):
+        self.name=name
+        self.rollno=rollno
+        self.marks=marks
+    def talk(self):
+        print("Hello My Name is:",self.name)
+        print("My RollNo is:",self.rollno)
+        print("My Marks Are:",self.marks)
+
+        s1=Student(Shubham,003,88)
+        s1.talk()
 
