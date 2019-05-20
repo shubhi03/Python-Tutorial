@@ -1,0 +1,25 @@
+#Real Time Project Using Regular Expression To Find The Valid Telangana State Vehical Number....
+'''
+import re
+svn=input("Enter The Vehicle Num")
+s=re.fullmatch("[T][S]\d{2}[A-Z]{2}\d{4}",svn)
+if s!= None:
+    print("Valid TS Vehical Number")
+else:
+    print("Not a Valid Number")
+'''
+
+
+
+#Real Time Project to find mobile number is valid or not Using Regular Expression
+
+import re
+num = input("Enter The Mobile Number")
+#s=re.fullmatch("[6-9]\d{9}",num) -------------->10 digit Number
+#s=re.fullmatch("[0][6-9]\d{9}",num) -----------> 11 digit Number starts from 0
+s=re.fullmatch("[9][1][6-9]\d{9}",num)----------> 12 digit Number starts from 91
+#s=re.fullmatch("[+][9][1][6-9]\d{9}",num) -----> digit Number starts from +91
+if s!=None:
+    print("Number Is Valid Mobile Number")
+else:
+    print("Number Is InValid")
