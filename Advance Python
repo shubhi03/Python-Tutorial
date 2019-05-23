@@ -1,3 +1,67 @@
+# Multilevel Inheritance
+'''
+class Student:
+    def getDetails(self):
+        self.id=101
+        self.name="Shubham"
+        
+    def showDetails(self):
+        print("ID is {}\n Name is {}".format(self.id,self.name))
+
+class Marks(Student):
+    def getMarks(self):
+        self.getDetails()
+        self.m=87
+        self.p=78
+        self.c=99
+    def showMarks(self):
+        self.showDetails()
+        
+        print("Marks are ")
+        print("Maths {}\nPhysics {}\nChem {}".format(self.m,self.p,self.c))
+class Result(Marks):
+    def calculate(self):
+        self.getMarks()
+        self.showMarks()
+        self.tot=self.m+self.p+self.c
+        self.avg=self.tot/3
+        print("Total marks ",self.tot)
+        print("Avg marks ",self.avg)
+
+r=Result()
+r.calculate()
+'''
+# Multiple Inheritance
+'''
+class Super1:
+    def m1(self):
+        self.x=10
+        print("This is Super class1")
+class Super2:
+    def m2(self):
+        self.y=20
+        print("This is Super class2")
+class Sub(Super1,Super2):
+    def m3(self):
+        self.m1()
+        self.m2()
+        print("x is {}\ny is {} ".format(self.x,self.y))
+        self.sb=self.x-self.y
+        print("Substraction",self.sb)
+s=Sub()
+s.m3()
+'''
+
+
+
+
+
+
+
+
+
+
+
 # Create a Class Called STUDENT and Create a Object to it.
 
 class Student:
