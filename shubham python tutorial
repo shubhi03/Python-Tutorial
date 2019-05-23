@@ -326,7 +326,7 @@ syntax -->
                   variable
                   methods
 '''
-#Constructor
+# Programs in Constructor
 # Default Constructor
 '''
 class sample:
@@ -338,6 +338,156 @@ class sample:
      print(self.x,self.y)
      s=sample()
      s.showvalues()
+'''
+# Parametrize Constructor
+'''
+class Sample:
+    
+    def __init__(self,a,b):
+        print("This is parameterized constructor")
+        self.x=a
+        self.y=b
+    def __del__(self):
+        print("Destructor executed")
+        
+    def showValues(self):
+   
+        print(self.x,self.y)
+    
+s1=Sample(10,20)
+s1.showValues()
+
+del Sample
+'''
+# Coding In Inheritance
+# Hierarchial Inheritance
+'''
+class Data:
+    def getData(self):
+        self.x=10
+        self.y=20
+class Addition(Data):
+    def add(self):
+        self.getData()
+        
+        print("x {} y {}".format(self.x,self.y))
+        self.ad=self.x+self.y
+        print("Addition is",self.ad)
+
+class Multiplication(Data):
+    def mul(self):
+        self.getData()
+        print("x {} y {}".format(self.x,self.y))
+        self.ml=self.x*self.y
+        print("Multiplication is ",self.ml)
+
+add=Addition()
+mul=Multiplication()
+add.add()
+mul.mul()
+'''
+# Multilevel Inheritance
+'''
+class Student:
+    def getDetails(self):
+        self.id=101
+        self.name="Shubham"
+        
+    def showDetails(self):
+        print("ID is {} Name is {}".format(self.id,self.name))
+
+class Marks(Student):
+    def getMarks(self):
+        self.getDetails()
+        self.m=87
+        self.p=78
+        self.c=99
+    def showMarks(self):
+        self.showDetails()
+        
+        print("Marks ")
+        print("Maths {}\nPhysics {}\nChem {}".format(self.m,self.p,self.c))
+class Result(Marks):
+    def calculate(self):
+        self.getMarks()
+        self.showMarks()
+        self.tot=self.m+self.p+self.c
+        self.avg=self.tot/3
+        print("Total marks ",self.tot)
+        print("Avg marks ",self.avg)
+
+r=Result()
+r.calculate()
+'''
+# Multiple Inheritance
+'''
+class Super1:
+    def m1(self):
+        self.x=10
+        print("This is Super class1")
+class Super2:
+    def m2(self):
+        self.y=20
+        print("This is Super class2")
+class Sub(Super1,Super2):
+    def m3(self):
+        self.m1()
+        self.m2()
+        print("x is {} y is {} ".format(self.x,self.y))
+        self.sb=self.x-self.y
+        print("Substraction",self.sb)
+s=Sub()
+s.m3()
+'''
+# Singel In heritance
+'''
+class Student:
+    def getDetails(self):
+        self.id=101
+        self.name="Aravind"
+        
+    def showDetails(self):
+        print("ID is {} Name is {}".format(self.id,self.name))
+
+class Marks(Student):
+    def getMarks(self):
+        print(self.id)
+        self.getDetails()
+        self.m=87
+        self.p=78
+        self.c=99
+    def showMarks(self):
+        self.showDetails()
+        
+        print("Marks ")
+        print("Maths {}\nPhysics {}\nChem {}".format(self.m,self.p,self.c))
+m=Marks()
+#m.getDetails() # calling from here optional
+#m.showDetails() # calling from here optional
+m.getMarks()
+m.showMarks()
+'''
+# Hybrid Iheritance
+'''
+class A:
+    def m1(self):
+        print("A class")
+class B(A):
+    def m2(self):
+        self.m1()
+        print("B class")
+class C(A):
+    def m3(self):
+        self.m1()
+        print("C class")
+
+class D(B,C):
+    def m4(self):
+        self.m2()
+        self.m3()
+        print("D class")
+obj=D()
+obj.m4()
 '''
 '''
 class student:
@@ -370,7 +520,7 @@ for i in range(1,n+1):
 '''
 # 10 is the total number to print
 '''
-for num in range(8):
+for num in range(10):
     for i in range(num):
         print (num, end=" ") #print number
     # new line after each row to display pattern correctly
@@ -457,112 +607,96 @@ if s!=None:
 else:
     print("Number Is InValid")
 '''
-# Multilevel Inheritance
+#Ex on static variable
 '''
-class Student:
-    def getDetails(self):
-        self.id=101
-        self.name="Shubham"
-        
-    def showDetails(self):
-        print("ID is {}\n Name is {}".format(self.id,self.name))
+class VDemo:
+    x=10#static variable
+    def mtd1(self):
+        print("static variable from instance method",self.x)
+    @staticmethod
+    def mtd2():
+        print("static variable from static method",VDemo.x)
+    @classmethod
+    def mtd3(cls):
+        print("static variable from class method",cls.x,VDemo.x)
+ 
+print(VDemo.x)
+obj=VDemo()
+obj.mtd1()
+VDemo.mtd2()
+VDemo.mtd3()
 
-class Marks(Student):
-    def getMarks(self):
-        self.getDetails()
-        self.m=87
-        self.p=78
-        self.c=99
-    def showMarks(self):
-        self.showDetails()
-        
-        print("Marks are ")
-        print("Maths {}\nPhysics {}\nChem {}".format(self.m,self.p,self.c))
-class Result(Marks):
-    def calculate(self):
-        self.getMarks()
-        self.showMarks()
-        self.tot=self.m+self.p+self.c
-        self.avg=self.tot/3
-        print("Total marks ",self.tot)
-        print("Avg marks ",self.avg)
+obj2=VDemo()
+obj3=VDemo()
+print(obj2.x)
+#obj2.x+=5#can't modify
+VDemo.x+=5# modify with class name from out side of the class
+print(obj3.x)#modifies in obj3
+print(obj2.x)#modifies in obj2
+'''
+# Exception Method
+'''
+class MyException(Exception):
+    
+    def customException(self):
+        try:
+            bal=5000
+            amt=int(input("Enter the amount withdraw"))
+            if amt<=bal:
+                print("Collect the cash ",amt)
+            else:
+                raise  MyException("Insufficient balance")
+        except MyException as me:
+            print(me)
+            
+m= MyException()
+m.customException()
+'''
+# find the square of every element in the list using lamda function
+'''
+def square(n):
+    return n*n
+print(tuple(map(lambda n:n*n,(1,2,3,4,5))))
+'''
+# Ex to return multiple values from function
+'''
+def calculate():
+    x=4
+    y=7
+    add=x+y
+    sub=x-y
+    mul=x*y
+    return add,sub,mul
 
-r=Result()
-r.calculate()
-'''
-# Multiple Inheritance
-'''
-class Super1:
-    def m1(self):
-        self.x=10
-        print("This is Super class1")
-class Super2:
-    def m2(self):
-        self.y=20
-        print("This is Super class2")
-class Sub(Super1,Super2):
-    def m3(self):
-        self.m1()
-        self.m2()
-        print("x is {}\ny is {} ".format(self.x,self.y))
-        self.sb=self.x-self.y
-        print("Substraction",self.sb)
-s=Sub()
-s.m3()
-'''
-# Multilevel Inheritance
-'''
-class Student:
-    def getDetails(self):
-        self.id=101
-        self.name="Shubham"
-        
-    def showDetails(self):
-        print("ID is {}\n Name is {}".format(self.id,self.name))
+c=calculate()
+print("Result is ",c)
+print("Retriving result with for loop")
+for x in c:
+    print(x)
 
-class Marks(Student):
-    def getMarks(self):
-        self.getDetails()
-        self.m=87
-        self.p=78
-        self.c=99
-    def showMarks(self):
-        self.showDetails()
-        
-        print("Marks are ")
-        print("Maths {}\nPhysics {}\nChem {}".format(self.m,self.p,self.c))
-class Result(Marks):
-    def calculate(self):
-        self.getMarks()
-        self.showMarks()
-        self.tot=self.m+self.p+self.c
-        self.avg=self.tot/3
-        print("Total marks ",self.tot)
-        print("Avg marks ",self.avg)
+def add():
+    x=4
+    y=7
+    add=x+y
+    print("Addition is",add)
+print("Addition from out side ",add())
+'''
+# To Give The Grade To The Student
+'''
+p=eval(input("Enter the percentage marks"))
 
-r=Result()
-r.calculate()
+if p>=90 and p<=100:
+    print("A Grade")
+elif p>=85 and p<90:
+    print("B Grade")
+elif p>=70 and p<85:
+    print("C Grade")
+elif p>50 and p<70:
+    print("D grade")
+else:
+    print("Invalid/fail")
 '''
-# Multiple Inheritance
-'''
-class Super1:
-    def m1(self):
-        self.x=10
-        print("This is Super class1")
-class Super2:
-    def m2(self):
-        self.y=20
-        print("This is Super class2")
-class Sub(Super1,Super2):
-    def m3(self):
-        self.m1()
-        self.m2()
-        print("x is {}\ny is {} ".format(self.x,self.y))
-        self.sb=self.x-self.y
-        print("Substraction",self.sb)
-s=Sub()
-s.m3()
-'''
+
 
 
 
