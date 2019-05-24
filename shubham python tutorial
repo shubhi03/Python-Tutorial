@@ -696,6 +696,25 @@ elif p>50 and p<70:
 else:
     print("Invalid/fail")
 '''
+# Program On Loop
+'''
+n=int(input("Enter a value"))
+i=1
+while i<=10:
+    print(n*i)
+    i+=1
+n=int(input("Enter a value"))
+i=1
+count=0
+while i<=n:
+    if n%i==0:
+        count+=1
+    i+=1
+if count==2:
+    print("Given number is prime")
+else:
+    print("Given number is composit")
+'''
 
 
 
